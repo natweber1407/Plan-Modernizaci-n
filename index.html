@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan de Capital Humano</title>
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d2430; --muted:#5b6473; --line:#e2e0da;
+  --accent:#1f5f8b; --accent-soft:#e3eef6; --warn:#8a5a00; --warn-soft:#fbf1dc;
+  --e0:#6b7a8f; --e1:#1f5f8b; --e2:#2e7d6b; --e3:#b0702a; --e4:#7a4e9c; --e5:#a33f4f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14171c; --surface:#1d2128; --ink:#e8eaee; --muted:#a3abb8; --line:#2f3540;
+    --accent:#7db7e0; --accent-soft:#1f3242; --warn:#e8c070; --warn-soft:#3a2f17;
+    --e0:#9aa7b8; --e1:#7db7e0; --e2:#6fc4ad; --e3:#e0a865; --e4:#b993d8; --e5:#e08593;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14171c; --surface:#1d2128; --ink:#e8eaee; --muted:#a3abb8; --line:#2f3540;
+  --accent:#7db7e0; --accent-soft:#1f3242; --warn:#e8c070; --warn-soft:#3a2f17;
+  --e0:#9aa7b8; --e1:#7db7e0; --e2:#6fc4ad; --e3:#e0a865; --e4:#b993d8; --e5:#e08593;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+header.hero{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:8px 0 12px}
+h2{font-size:clamp(22px,3.5vw,28px);margin:0 0 6px}
+h3{font-size:17px;margin:18px 0 6px}
+p{margin:0 0 10px}
+.muted{color:var(--muted)}
+.note{background:var(--warn-soft);color:var(--ink);border-left:4px solid var(--warn);padding:12px 14px;border-radius:8px;font-size:15px;margin:16px 0}
+section{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 20px;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:10px;padding:14px}
+.card b{display:block;margin-bottom:4px}
+ul{margin:4px 0 10px;padding-left:20px}
+li{margin:3px 0}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 6px 6px 0}
+/* timeline */
+.gantt{margin-top:14px}
+.months{display:grid;grid-template-columns:110px repeat(18,1fr);font-size:11px;color:var(--muted);margin-bottom:6px}
+.months span{text-align:center}
+.row{display:grid;grid-template-columns:110px repeat(18,1fr);align-items:center;margin:6px 0}
+.row .lbl{font-size:13px;font-weight:600;padding-right:8px}
+.bar{height:22px;border-radius:6px}
+@media (max-width:560px){
+  .months,.row{grid-template-columns:78px repeat(18,1fr)}
+  .row .lbl{font-size:11px}
+  .months span:nth-child(odd):not(:first-child){visibility:hidden}
+}
+/* stages */
+.stage-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:8px}
+.num{font-weight:700;font-size:14px;color:#fff;padding:4px 10px;border-radius:8px}
+.dur{font-size:14px;color:var(--muted);font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}}
+.box{border-radius:10px;padding:14px;background:var(--bg);border:1px solid var(--line)}
+.result{margin-top:14px;padding:14px;border-radius:10px;border:1px dashed var(--accent);background:var(--accent-soft)}
+.result b{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.tbl{overflow-x:auto}
+footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Modernización · Capital humano</div>
+  <h1>Plan de gestión del cambio con foco en las personas</h1>
+  <p class="muted">Aseguradora · aprox. 609 colaboradores · Modernización tecnológica, cultural y de procesos</p>
+  <p class="muted">Rol: referente del lado humano de la transformación, trabajando junto a RR.HH. y en coordinación con la oficina de modernización.</p>
+  <div class="note"><b>Importante:</b> los plazos son una <b>propuesta orientativa</b> (horizonte de ~18 meses), no un estándar. Deben validarse con la oficina de modernización y ajustarse al cronograma tecnológico real, la capacidad del equipo de RR.HH. y las prioridades de la dirección.</div>
+</header>
+
+<section>
+  <h2>Objetivo general</h2>
+  <p>Lograr que las personas de la organización comprendan, acepten y adopten las nuevas formas de trabajo que trae la modernización, y que el área de RR.HH. evolucione hacia un rol estratégico capaz de sostener ese cambio en el tiempo.</p>
+  <h3>Dos frentes de trabajo</h3>
+  <div class="grid">
+    <div class="card"><b>Hacia las personas</b>Diagnóstico, comunicación, mandos medios, capacitación y reconversión, acompañamiento.</div>
+    <div class="card"><b>Hacia RR.HH.</b>Alianza, diagnóstico compartido, rediseño de procesos propios, datos de personas, capacitación del equipo.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Metodología</h2>
+  <p>Se combinan dos marcos reconocidos de gestión del cambio:</p>
+  <div class="grid">
+    <div class="card"><b>Kotter – 8 pasos</b>Ordena las etapas a nivel organizacional: generar urgencia, formar una coalición, definir y comunicar la visión, remover obstáculos, lograr resultados tempranos, sostener la aceleración e institucionalizar el cambio.</div>
+    <div class="card"><b>ADKAR (Prosci)</b>Ordena la transición de cada persona: Conciencia (Awareness), Deseo (Desire), Conocimiento (Knowledge), Habilidad (Ability) y Refuerzo (Reinforcement).</div>
+  </div>
+  <p class="muted" style="margin-top:12px">Cada etapa indica a qué pasos de Kotter y a qué fases de ADKAR responde.</p>
+</section>
+
+<section>
+  <h2>Cronograma orientativo</h2>
+  <div class="gantt" role="img" aria-label="Cronograma de 18 meses con seis etapas">
+    <div class="months"><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span></div>
+    <div class="row"><span class="lbl">0 · Preparación</span><div class="bar" style="grid-column:2 / 4;background:var(--e0)"></div></div>
+    <div class="row"><span class="lbl">1 · Diagnóstico</span><div class="bar" style="grid-column:3 / 6;background:var(--e1)"></div></div>
+    <div class="row"><span class="lbl">2 · Visión</span><div class="bar" style="grid-column:5 / 7;background:var(--e2)"></div></div>
+    <div class="row"><span class="lbl">3 · Pilotos</span><div class="bar" style="grid-column:7 / 11;background:var(--e3)"></div></div>
+    <div class="row"><span class="lbl">4 · Escalamiento</span><div class="bar" style="grid-column:11 / 17;background:var(--e4)"></div></div>
+    <div class="row"><span class="lbl">5 · Consolidación</span><div class="bar" style="grid-column:16 / 20;background:var(--e5)"></div></div>
+  </div>
+  <p class="muted" style="margin-top:10px">Algunas etapas se superponen a propósito: por ejemplo, la comunicación empieza mientras se cierra el diagnóstico.</p>
+</section>
+
+<!-- ETAPA 0 -->
+<section>
+  <div class="stage-head"><span class="num" style="background:var(--e0)">Etapa 0</span><h2>Preparación y alianzas</h2><span class="dur">Meses 1–2</span></div>
+  <span class="tag">Kotter 1–2: urgencia y coalición</span><span class="tag">ADKAR: Conciencia</span>
+  <p><b>Objetivo:</b> definir tu rol, construir la alianza con RR.HH. y la oficina de modernización, y asegurar el respaldo de la dirección.</p>
+  <div class="cols">
+    <div class="box"><h3>Hacia las personas</h3><ul>
+      <li>Acordar con la dirección el porqué del cambio y un sponsor visible.</li>
+      <li>Identificar referentes formales e informales en cada área.</li>
+      <li>Convocar una red inicial de agentes de cambio.</li>
+    </ul></div>
+    <div class="box"><h3>Hacia RR.HH.</h3><ul>
+      <li>Reuniones de escucha con el equipo: prioridades, cargas, frustraciones.</li>
+      <li>Definir cómo van a trabajar juntos y quién decide qué.</li>
+      <li>Acordar con la oficina de modernización la interfaz: análisis de impacto en personas en cada iniciativa.</li>
+    </ul></div>
+  </div>
+  <div class="result"><b>Resultado esperado:</b> rol y responsabilidades acordados por escrito, sponsor designado, red inicial de agentes de cambio y mecanismo de coordinación con RR.HH. y la oficina de modernización.</div>
+</section>
+
+<!-- ETAPA 1 -->
+<section>
+  <div class="stage-head"><span class="num" style="background:var(--e1)">Etapa 1</span><h2>Diagnóstico</h2><span class="dur">Meses 2–4</span></div>
+  <span class="tag">Kotter 1: base para la urgencia</span><span class="tag">ADKAR: Conciencia</span>
+  <p><b>Objetivo:</b> conocer el punto de partida real de la gente y de RR.HH., para decidir con información y tener una línea de base medible.</p>
+  <div class="cols">
+    <div class="box"><h3>Hacia las personas</h3><ul>
+      <li>Encuesta de clima y cultura con preguntas sobre la percepción del cambio.</li>
+      <li>Mapa de capacidades digitales por área.</li>
+      <li>Entrevistas y focus groups con distintos niveles y áreas.</li>
+      <li>Junto con la oficina de modernización: identificar los puestos más impactados.</li>
+    </ul></div>
+    <div class="box"><h3>Hacia RR.HH.</h3><ul>
+      <li>Diagnóstico compartido de procesos: selección, evaluación, desarrollo, compensaciones, administración.</li>
+      <li>Pregunta guía: ¿este proceso ayuda o frena la modernización?</li>
+      <li>Relevar qué datos de personas existen y cuáles faltan.</li>
+      <li>Revisar si hoy existe un sistema de evaluación de desempeño, cómo funciona y cómo lo perciben líderes y colaboradores.</li>
+    </ul></div>
+  </div>
+  <div class="result"><b>Resultado esperado:</b> informe de diagnóstico con línea de base (clima, cultura, capacidades), mapa de puestos impactados y grupos sensibles, y lista priorizada de procesos de RR.HH. a modernizar.</div>
+</section>
+
+<!-- ETAPA 2 -->
+<section>
+  <div class="stage-head"><span class="num" style="background:var(--e2)">Etapa 2</span><h2>Visión y comunicación</h2><span class="dur">Meses 4–5</span></div>
+  <span class="tag">Kotter 3–4: visión y comunicación</span><span class="tag">ADKAR: Conciencia → Deseo</span>
+  <p><b>Objetivo:</b> que toda la organización entienda por qué se moderniza, qué cambia, qué no y cómo la afecta.</p>
+  <div class="cols">
+    <div class="box"><h3>Hacia las personas</h3><ul>
+      <li>Construir el mensaje central con la dirección.</li>
+      <li>Lanzamiento encabezado por el sponsor.</li>
+      <li>Cascada: mandos medios reciben la información primero y la bajan a sus equipos.</li>
+      <li>Abrir canales de ida y vuelta: espacios de preguntas, buzón, encuentros periódicos.</li>
+      <li>Comenzar la formación de mandos medios como líderes del cambio.</li>
+    </ul></div>
+    <div class="box"><h3>Hacia RR.HH.</h3><ul>
+      <li>Definir una agenda común de 2 o 3 cambios prioritarios.</li>
+      <li>Que RR.HH. tenga un rol visible en la comunicación.</li>
+      <li>Diseñar el plan de capacitación según el diagnóstico.</li>
+      <li>Diseñar junto con RR.HH. el esquema de evaluaciones de desempeño periódicas: criterios, frecuencia, formularios y circuito.</li>
+    </ul></div>
+  </div>
+  <div class="result"><b>Resultado esperado:</b> plan de comunicación en marcha, mandos medios informados y en formación, canales de escucha activos y agenda de modernización de RR.HH. acordada.</div>
+</section>
+
+<!-- ETAPA 3 -->
+<section>
+  <div class="stage-head"><span class="num" style="background:var(--e3)">Etapa 3</span><h2>Pilotos</h2><span class="dur">Meses 6–9</span></div>
+  <span class="tag">Kotter 5–6: remover obstáculos y lograr resultados tempranos</span><span class="tag">ADKAR: Conocimiento → Habilidad</span>
+  <p><b>Objetivo:</b> probar el modelo en un área acotada, aprender y generar resultados visibles que den credibilidad al proceso.</p>
+  <div class="cols">
+    <div class="box"><h3>Hacia las personas</h3><ul>
+      <li>Elegir con la oficina de modernización un área o proceso piloto.</li>
+      <li>Capacitación práctica y cercana al trabajo real para ese equipo.</li>
+      <li>Tutores internos: compañeros con más dominio digital.</li>
+      <li>Acompañamiento individual a quienes tengan más dificultades.</li>
+      <li>Relevar y remover obstáculos que aparezcan.</li>
+    </ul></div>
+    <div class="box"><h3>Hacia RR.HH.</h3><ul>
+      <li>Implementar un primer cambio visible y de bajo riesgo (por ejemplo, autogestión de trámites simples o perfiles de puesto actualizados).</li>
+      <li>Armar indicadores básicos de personas.</li>
+      <li>Comenzar la capacitación del propio equipo de RR.HH.</li>
+      <li>Probar el nuevo esquema de evaluación de desempeño en el área piloto, incluida la formación de sus líderes para evaluar y dar feedback.</li>
+    </ul></div>
+  </div>
+  <div class="result"><b>Resultado esperado:</b> piloto evaluado con aprendizajes documentados, al menos un logro temprano comunicado (con el reconocimiento puesto en los equipos y en RR.HH.) y modelo de capacitación validado para escalar.</div>
+</section>
+
+<!-- ETAPA 4 -->
+<section>
+  <div class="stage-head"><span class="num" style="background:var(--e4)">Etapa 4</span><h2>Escalamiento</h2><span class="dur">Meses 10–15</span></div>
+  <span class="tag">Kotter 7: sostener la aceleración</span><span class="tag">ADKAR: Habilidad</span>
+  <p><b>Objetivo:</b> extender el cambio al resto de la organización, ajustando lo aprendido en los pilotos.</p>
+  <div class="cols">
+    <div class="box"><h3>Hacia las personas</h3><ul>
+      <li>Capacitación en tres niveles: alfabetización digital general, herramientas por puesto y reconversión para quien cambie de función.</li>
+      <li>Planes de reconversión para los puestos más impactados.</li>
+      <li>Acompañamiento a grupos con más incertidumbre.</li>
+      <li>Si hay cambios de puesto o desvinculaciones: transparencia y trato respetuoso, con asesoramiento legal.</li>
+      <li>Segunda medición de clima para comparar con la línea de base.</li>
+    </ul></div>
+    <div class="box"><h3>Hacia RR.HH.</h3><ul>
+      <li>Extender las evaluaciones de desempeño periódicas a toda la organización, ajustadas con lo aprendido en el piloto.</li>
+      <li>Formar a todos los líderes en evaluación y conversaciones de feedback.</li>
+      <li>Actualizar perfiles de puesto y criterios de selección con las nuevas competencias.</li>
+      <li>Avanzar en la digitalización de la gestión de RR.HH.</li>
+      <li>Usar indicadores de personas en las decisiones.</li>
+    </ul></div>
+  </div>
+  <div class="result"><b>Resultado esperado:</b> la mayoría de las áreas trabajando con los nuevos procesos y herramientas, planes de reconversión en curso y procesos clave de RR.HH. alineados con la modernización.</div>
+</section>
+
+<!-- ETAPA 5 -->
+<section>
+  <div class="stage-head"><span class="num" style="background:var(--e5)">Etapa 5</span><h2>Consolidación</h2><span class="dur">Meses 16–18 en adelante</span></div>
+  <span class="tag">Kotter 8: institucionalizar el cambio</span><span class="tag">ADKAR: Refuerzo</span>
+  <p><b>Objetivo:</b> que lo nuevo pase a ser la forma normal de trabajar y que la organización pueda seguir cambiando sin depender de un programa especial.</p>
+  <div class="cols">
+    <div class="box"><h3>Hacia las personas</h3><ul>
+      <li>Reconocer públicamente a equipos y personas que impulsaron el cambio.</li>
+      <li>Medición final y comparación con la línea de base.</li>
+      <li>Mantener los canales de escucha como práctica permanente.</li>
+      <li>Transformar la red de agentes de cambio en una comunidad estable.</li>
+    </ul></div>
+    <div class="box"><h3>Hacia RR.HH.</h3><ul>
+      <li>Traspasar la gestión del cambio a RR.HH. como capacidad propia.</li>
+      <li>Incorporar los nuevos comportamientos en inducción, evaluación e incentivos de forma permanente.</li>
+      <li>Revisión periódica de indicadores de personas.</li>
+      <li>Evaluaciones de desempeño periódicas como práctica estable, revisando el esquema al menos una vez al año.</li>
+    </ul></div>
+  </div>
+  <div class="result"><b>Resultado esperado:</b> informe de cierre con resultados frente a la línea de base, cambios incorporados en los procesos de RR.HH. y capacidad interna instalada para gestionar cambios futuros.</div>
+</section>
+
+<section>
+  <h2>Propuesta: evaluaciones de desempeño periódicas</h2>
+  <p><b>Objetivo:</b> contar con un mecanismo regular para acompañar a cada persona en la transición, reconocer los nuevos comportamientos que busca la modernización y detectar a tiempo necesidades de capacitación o apoyo.</p>
+  <div class="cols">
+    <div class="box"><h3>Qué evaluar</h3><ul>
+      <li><b>Resultados</b> del puesto.</li>
+      <li><b>Comportamientos y competencias</b> asociados a la modernización (por ejemplo: adaptación al cambio, uso de nuevas herramientas, colaboración, aprendizaje continuo).</li>
+      <li>Criterios conocidos de antemano por todos.</li>
+    </ul></div>
+    <div class="box"><h3>Cómo hacerlo</h3><ul>
+      <li>Foco en el desarrollo, no solo en el control.</li>
+      <li>Conversación entre líder y colaborador, con espacio para la autoevaluación.</li>
+      <li>Instancias de calibración entre líderes para que los criterios sean parejos.</li>
+      <li>Cada evaluación termina con acuerdos concretos y, si hace falta, un plan de desarrollo.</li>
+      <li>Resultados vinculados al plan de capacitación y reconversión.</li>
+    </ul></div>
+  </div>
+  <h3>Frecuencia</h3>
+  <p>A definir con RR.HH. según su capacidad y la cultura actual. Algunas opciones posibles:</p>
+  <ul>
+    <li>Una evaluación formal anual con revisiones intermedias más breves.</li>
+    <li>Dos evaluaciones formales al año.</li>
+    <li>Conversaciones de seguimiento frecuentes (por ejemplo, trimestrales), más una evaluación formal anual.</li>
+  </ul>
+  <h3>Recaudos</h3>
+  <ul>
+    <li>Formar a los líderes antes de la primera evaluación; una evaluación mal hecha genera desconfianza.</li>
+    <li>Comunicar con claridad para qué se usan los resultados.</li>
+    <li>Si existe convenio colectivo o representación gremial, revisar con legales y RR.HH. las implicancias antes de implementarlas.</li>
+  </ul>
+  <div class="result"><b>Resultado esperado:</b> evaluaciones periódicas instaladas, percibidas como herramienta de desarrollo, con información que alimenta las decisiones de capacitación, reconocimiento y movilidad interna.</div>
+</section>
+
+<section>
+  <h2>Indicadores de seguimiento</h2>
+  <p class="muted">Sugeridos para medir en cada etapa. Las metas concretas deben definirse a partir de la línea de base del diagnóstico.</p>
+  <div class="tbl"><table>
+    <tr><th>Indicador</th><th>Qué muestra</th></tr>
+    <tr><td>Clima y percepción del cambio</td><td>Confianza, disposición y temores de la gente</td></tr>
+    <tr><td>Adopción de nuevas herramientas y procesos</td><td>Si el cambio se usa en la práctica, no solo si se implementó</td></tr>
+    <tr><td>Participación y aprovechamiento de capacitaciones</td><td>Avance en conocimiento y habilidades</td></tr>
+    <tr><td>Rotación y ausentismo</td><td>Posibles señales de malestar o desgaste</td></tr>
+    <tr><td>Uso de canales de escucha</td><td>Nivel de diálogo y confianza</td></tr>
+    <tr><td>Cobertura y cumplimiento de evaluaciones de desempeño</td><td>Si las evaluaciones se realizan en tiempo y forma</td></tr>
+    <tr><td>Planes de desarrollo surgidos de las evaluaciones</td><td>Si la evaluación se traduce en acciones concretas</td></tr>
+    <tr><td>Procesos de RR.HH. modernizados</td><td>Avance del frente interno de RR.HH.</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Resultado final</h2>
+  <div class="grid">
+    <div class="card"><b>Personas</b>Comprenden el porqué del cambio, cuentan con las capacidades para trabajar de la nueva forma y la adoptaron en su día a día.</div>
+    <div class="card"><b>Líderes</b>Mandos medios preparados para conducir equipos en contextos de cambio.</div>
+    <div class="card"><b>RR.HH.</b>Área con rol estratégico, procesos alineados con la nueva cultura y decisiones basadas en datos.</div>
+    <div class="card"><b>Organización</b>Capacidad instalada para gestionar cambios futuros sin depender de un programa especial.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Riesgos a vigilar</h2>
+  <ul>
+    <li>Implementar tecnología sin cambiar procesos ni preparar a la gente.</li>
+    <li>Mandos medios que no se involucran o se enteran junto con sus equipos.</li>
+    <li>Mensajes cruzados entre la oficina de modernización, RR.HH. y la dirección.</li>
+    <li>Pérdida del respaldo visible de la dirección con el paso del tiempo.</li>
+    <li>Sobrecarga del equipo de RR.HH., que además de acompañar debe modernizarse.</li>
+    <li>Si existe convenio colectivo o representación gremial: no involucrarla a tiempo.</li>
+  </ul>
+</section>
+
+<footer>Documento de trabajo · Plazos orientativos a validar</footer>
+</div>
+</body>
+</html>
